@@ -3,9 +3,9 @@ package testProject;
 import java.util.*;
 
 public class Main  {
-    public static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
-    public static void sort(){
+    private static void sort(){
         System.out.print("Укажите количество массивов для сортировки: ");
 
         ArrayList<Integer[]> nice = new ArrayList<>();
@@ -28,7 +28,7 @@ public class Main  {
         }
     }
 
-    public static String game(String type){
+    private static String game(String type){
         if (Objects.equals(type, "speed")){
             System.out.print("Введите количество тестов: ");
             int b = scanner.nextInt();
@@ -48,22 +48,22 @@ public class Main  {
         {
             System.out.print("Введите количество тестов: ");
             int b = scanner.nextInt();
-            int misstakes = 0;
+            int mistakes = 0;
             Random random = new Random();
             for (int i = 0; i < b; i++){
                 int num_1 = random.nextInt(100);
                 int num_2 = random.nextInt(100);
                 System.out.print(num_1 + " - " + num_2 + ": ");
                 if (scanner.nextInt() != num_1 - num_2){
-                    misstakes += 1;
+                    mistakes += 1;
                 }
             }
-            return "Ошибок " + misstakes + " из " + b;
+            return "Ошибок " + mistakes + " из " + b;
         }
         return "Такого типа игры нет!";
     }
 
-    public static void start_game(){
+    private static void start_game(){
         System.out.print("Выберите режим игры(result; speed): ");
         String gameType = scanner.next();
         System.out.println(game(gameType));

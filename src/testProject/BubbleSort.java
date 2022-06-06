@@ -1,7 +1,6 @@
 package testProject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class BubbleSort {
     public void intCollectionSort(ArrayList<Integer[]> array_get){
